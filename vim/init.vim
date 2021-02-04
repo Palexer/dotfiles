@@ -63,8 +63,15 @@ set complete+=kspell
 set completeopt=menuone,longest
 set shortmess+=c
 
-" deoplete
-let g:deoplete#enable_at_startup = 1
+" ale
+set omnifunc=ale#completion#OmniFunc
+let g:ale_completion_enabled = 1
+let g:ale_completion_autoimport = 1
+let g:ale_sign_column_always = 1
+let g:ale_fix_on_save = 1
+let g:ale_linters = {
+  \ 'go': ['gopls'],
+  \}
 
 " Navigate the complete menu items like CTRL+n / CTRL+p would.
 inoremap <expr> <Down> pumvisible() ? "<C-n>" :"<Down>"
@@ -85,7 +92,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'godlygeek/tabular'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'dense-analysis/ale'
 call plug#end()
 
 " hide parts of the default status bar

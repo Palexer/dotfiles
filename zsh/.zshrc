@@ -52,6 +52,7 @@ alias ll="exa -l"
 alias lla="exa -al"
 alias la="exa -a"
 
+alias vim="nvim"
 alias cl="clear"
 
 EDITOR=nvim
