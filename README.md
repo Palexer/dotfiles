@@ -1,1 +1,8 @@
-My personal dotfiles for zsh and nvim
+# dotfiles
+
+My personal dotfiles for: 
+
+- Neovim
+- ZSH
+- Alacritty
+
