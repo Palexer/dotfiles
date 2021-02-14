@@ -78,7 +78,8 @@ let g:ale_sign_column_always = 1
 let g:ale_fix_on_save = 1
 let g:ale_linters = {
  \ 'go': ['gopls'],
-\}
+\} 
+
 
 " Navigate the complete menu items like CTRL+n / CTRL+p would.
 inoremap <expr> <Down> pumvisible() ? "<C-n>" :"<Down>"
@@ -100,6 +101,7 @@ Plug 'vim-scripts/AutoComplPop'
 Plug 'godlygeek/tabular'
 Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 " Go configuration
@@ -109,6 +111,7 @@ let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_operators = 1
+let g:go_code_completion_enabled = 0
 
 " Auto formatting and importing
 let g:go_fmt_autosave = 1
@@ -136,4 +139,7 @@ set noshowmode
 set noruler
 set noshowcmd
 set cmdheight=1
+
+" copy/paste with system clipboard by default
+set clipboard+=unnamedplus
 

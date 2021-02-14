@@ -73,12 +73,11 @@ alias update="sudo dnf upgrade && flatpak update"
 alias gi="git init"
 alias ga="git add"
 alias gc="git commit"
-alias gp="git push"
+alias gps="git push"
 alias gpl="git pull"
 alias gcl="git clone"
-alias gstat="git status"
-
-alias mc="micro"
+alias gst="git status"
+alias gd="git diff"
 
 # export Go bin dir
 export PATH="$HOME/go/bin:$PATH"
