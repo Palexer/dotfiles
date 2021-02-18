@@ -63,10 +63,8 @@ set statusline+=\ %3l:%-2c\         	" line + column
 set statusline+=%#Cursor#       		" colour
 set statusline+=\ %3p%%\                " percentage
 
-" autocomplete: 
-" don't complete words from kspell dictionary
+" autocompletion 
 set complete+=kspell
-
 set completeopt=menuone,longest
 set shortmess+=c
 
@@ -79,11 +77,27 @@ let g:ale_fix_on_save = 1
 let g:ale_linters = {
  \ 'go': ['gopls'],
 \} 
+let g:ale_fixers = {
+    \ 'rust': ['rustfmt'],
+\}
 
+let g:ale_cpp_ccls_init_options = {
+\   'cache': {
+\       'directory': '/tmp/ccls/cache'
+\   }
+\ }
 
 " Navigate the complete menu items like CTRL+n / CTRL+p would.
 inoremap <expr> <Down> pumvisible() ? "<C-n>" :"<Down>"
 inoremap <expr> <Up> pumvisible() ? "<C-p>" : "<Up>"
+
+" navigate autocompletion menu with Tab
+inoremap <silent><expr><TAB>
+    \ pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" go to definition and find references
+nmap <silent> <F2> :ALEGoToDefinition<CR>
+nmap <silent> <F3> :ALEFindReferences<CR>
 
 " Plugins
 " Install Plug
@@ -102,6 +116,9 @@ Plug 'godlygeek/tabular'
 Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'conornewton/vim-latex-preview'
+Plug 'cespare/vim-toml'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 " Go configuration
@@ -111,6 +128,8 @@ let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_operators = 1
+
+" use ale autocompletion instead of vim-go
 let g:go_code_completion_enabled = 0
 
 " Auto formatting and importing
@@ -143,3 +162,5 @@ set cmdheight=1
 " copy/paste with system clipboard by default
 set clipboard+=unnamedplus
 
+" vim-latex-live-preview settings
+autocmd Filetype tex setl updatetime=1
