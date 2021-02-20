@@ -16,27 +16,20 @@ set incsearch
 set background=dark
 set noerrorbells
 set backspace=indent,eol,start
+set t_Co=256 " force 256 colors 
 
 " splits
 set splitbelow
 set splitright
 
-" Enable folding
-set foldmethod=indent
+" Enable folding set foldmethod=indent
 set foldlevel=99
 
 " Enable folding with the spacebar
 nnoremap <space> za
 
-" colors
-colorscheme onedark
-set termguicolors
-
 " Brackets Highlighting Colors
 hi MatchParen cterm=none ctermbg=black ctermfg=white
-
-" Errors/BadSpellings Higlighing Colors
-:highlight clear SpellBad
 
 " status bar
 set laststatus=2
@@ -63,8 +56,26 @@ set statusline+=\ %3l:%-2c\         	" line + column
 set statusline+=%#Cursor#       		" colour
 set statusline+=\ %3p%%\                " percentage
 
-" autocompletion 
+" spell checking
+let b:myLang=0
+let g:myLangList=["nospell","de_de","en_gb"]
+function! ToggleSpell()
+  let b:myLang=b:myLang+1
+  if b:myLang>=len(g:myLangList) | let b:myLang=0 | endif
+  if b:myLang==0
+    setlocal nospell
+  else
+    execute "setlocal spell spelllang=".get(g:myLangList, b:myLang)
+  endif
+  echo "spell checking language:" g:myLangList[b:myLang]
+endfunction
+
+" toggle language with F7
+nmap <silent> <F7> :call ToggleSpell()<CR>
+
 set complete+=kspell
+
+" autocompletion 
 set completeopt=menuone,longest
 set shortmess+=c
 
@@ -95,6 +106,10 @@ inoremap <expr> <Up> pumvisible() ? "<C-p>" : "<Up>"
 inoremap <silent><expr><TAB>
     \ pumvisible() ? "\<C-n>" : "\<TAB>"
 
+inoremap <silent><expr><S-TAB>
+    \ pumvisible() ? "\<C-p>" : "\<TAB>"
+
+
 " go to definition and find references
 nmap <silent> <F2> :ALEGoToDefinition<CR>
 nmap <silent> <F3> :ALEFindReferences<CR>
@@ -110,15 +125,12 @@ endif
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
 Plug 'jiangmiao/auto-pairs' " auto close brackets, etc.
-Plug 'joshdick/onedark.vim' " colorscheme
-Plug 'vim-scripts/AutoComplPop'
+Plug 'joshdick/onedark.vim' " colorscheme Plug 'vim-scripts/AutoComplPop'
 Plug 'godlygeek/tabular'
 Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'conornewton/vim-latex-preview'
-Plug 'cespare/vim-toml'
-Plug 'rust-lang/rust.vim'
 call plug#end()
 
 " Go configuration
@@ -129,7 +141,7 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_operators = 1
 
-" use ale autocompletion instead of vim-go
+" disable vim-go autocompletion and use ale instead
 let g:go_code_completion_enabled = 0
 
 " Auto formatting and importing
@@ -164,3 +176,8 @@ set clipboard+=unnamedplus
 
 " vim-latex-live-preview settings
 autocmd Filetype tex setl updatetime=1
+let g:latex_pdf_viewer="zathura"
+
+" colors
+colorscheme onedark
+set termguicolors
