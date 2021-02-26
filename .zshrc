@@ -44,7 +44,20 @@ ex ()
   fi
 }
 
+grfmom ()
+{
+	if [ $# == 0 || $# == 1 ]; then
+		echo "too less arguments"
+	elif [ $# == 2 ]; then
+		eqn $1 -Tpdf | groff -mom -Tpdf -k > $2
+	else
+		refer -p $2 $1 | eqn -Tpdf | groff -mom -Tpdf -k > $3
+	fi
+}
+
 # aliases
+alias o="xdg-open"
+
 # listing with exa
 alias ls="exa"
 alias l="exa"

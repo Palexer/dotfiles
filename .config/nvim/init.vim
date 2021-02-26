@@ -18,6 +18,9 @@ set noerrorbells
 set backspace=indent,eol,start
 set t_Co=256 " force 256 colors 
 
+" leader key
+let mapleader = " "
+
 " splits
 set splitbelow
 set splitright
@@ -87,7 +90,8 @@ let g:ale_sign_column_always = 1
 let g:ale_fix_on_save = 1
 let g:ale_linters = {
  \ 'go': ['gopls'],
-\} 
+ \ 'python': ['pyls', 'pylint'],
+ \} 
 let g:ale_fixers = {
     \ 'rust': ['rustfmt'],
 \}
@@ -131,6 +135,7 @@ Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'conornewton/vim-latex-preview'
+Plug 'preservim/nerdcommenter'
 call plug#end()
 
 " Go configuration
