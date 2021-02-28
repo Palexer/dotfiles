@@ -1,9 +1,10 @@
 # dotfiles
 
-My personal dotfiles for: 
+My personal dotfiles for:
 
 - Neovim
 - ZSH
 - Alacritty
 - tmux
-
+- i3
+- polybar
