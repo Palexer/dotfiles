@@ -44,19 +44,9 @@ ex ()
   fi
 }
 
-grfmom ()
-{
-	if [ $# == 0 || $# == 1 ]; then
-		echo "too less arguments"
-	elif [ $# == 2 ]; then
-		eqn $1 -Tpdf | groff -mom -Tpdf -k > $2
-	else
-		refer -p $2 $1 | eqn -Tpdf | groff -mom -Tpdf -k > $3
-	fi
-}
-
 # aliases
 alias o="xdg-open"
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 # listing with exa
 alias ls="exa"
@@ -68,10 +58,14 @@ alias la="exa -a"
 alias vim="nvim"
 alias cl="clear"
 
+# set neovim as editor
 EDITOR=nvim
 VISUAL=nvim
-alias zshrc='$EDITOR ~/.zshrc' # Quick access to the ~/.zshrc file
+
+# quick access to zsh, neovim and i3 config
+alias zshrc='$EDITOR ~/.zshrc'
 alias nvrc="$EDITOR ~/.config/nvim/init.vim"
+alias wmc="$EDITOR ~/.config/i3/config"
 
 alias grep='grep --color'
 
@@ -98,4 +92,3 @@ export PATH="$HOME/go/bin:$PATH"
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-

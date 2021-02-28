@@ -16,10 +16,10 @@ set incsearch
 set background=dark
 set noerrorbells
 set backspace=indent,eol,start
-set t_Co=256 " force 256 colors 
+set t_Co=256 " force 256 colors
 
 " leader key
-let mapleader = " "
+let mapleader = ","
 
 " splits
 set splitbelow
@@ -78,7 +78,7 @@ nmap <silent> <F7> :call ToggleSpell()<CR>
 
 set complete+=kspell
 
-" autocompletion 
+" autocompletion
 set completeopt=menuone,longest
 set shortmess+=c
 
@@ -91,7 +91,7 @@ let g:ale_fix_on_save = 1
 let g:ale_linters = {
  \ 'go': ['gopls'],
  \ 'python': ['pyls', 'pylint'],
- \} 
+ \}
 let g:ale_fixers = {
     \ 'rust': ['rustfmt'],
 \}
@@ -129,7 +129,6 @@ endif
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
 Plug 'jiangmiao/auto-pairs' " auto close brackets, etc.
-Plug 'joshdick/onedark.vim' " colorscheme Plug 'vim-scripts/AutoComplPop'
 Plug 'godlygeek/tabular'
 Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree'
@@ -161,7 +160,7 @@ au filetype go inoremap <buffer> . .<C-x><C-o>
 
 " NERDTree configuration
 " Toggle side window with `CTRL+z`.
-map <C-z> :NERDTreeToggle<CR> 
+map <C-z> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let NERDTreeShowHidden=1 " Show hidden files
@@ -182,6 +181,17 @@ set clipboard+=unnamedplus
 " vim-latex-live-preview settings
 autocmd Filetype tex setl updatetime=1
 let g:latex_pdf_viewer="zathura"
+
+" Shortcutting split navigation, saving a keypress:
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Automatically deletes all trailing whitespace and newlines at end of file on save.
+autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritePre * %s/\n\+\%$//e
+autocmd BufWritePre *.[ch] %s/\%$/\r/e
 
 " colors
 colorscheme onedark
