@@ -71,11 +71,7 @@ label-font = 3
 type = internal/pulseaudio
 
 format-volume = <ramp-volume> <label-volume>
-label-muted = 🔇 muted
-;ramp-volume-0 = 🔈
-;ramp-volume-1 = 🔉
-;ramp-volume-2 = 🔊
-
+label-muted = muted
 label-muted-foreground = #666
 
 ramp-volume-0 = 
