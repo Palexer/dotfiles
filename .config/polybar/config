@@ -56,9 +56,10 @@ index-sort = true
 label-focused = %index%
 label-focused-background = #66b2f9
 label-focused-padding = 2
-
+label-urgent-padding = 2
 label-unfocused = %index%
 label-unfocused-padding = 2
+label-visible-padding = 2
 
 [module/date]
 type = internal/date
