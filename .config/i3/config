@@ -1,7 +1,7 @@
 # i3 config file (v4)
-#
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# set mod key to super/win/...
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -141,12 +141,6 @@ mode "resize" {
         bindsym $mod+k resize shrink height 10 px or 10 ppt
         bindsym $mod+l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -155,8 +149,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # set lockscreen
-set $Locker i3lock -i ~/Bilder/Wallpaper/Fedora/f34-02-night.png && sleep 1
+set $Locker 'i3lock -i ~/Bilder/Wallpaper/minimal-landscape/mountains.png && sleep 1'
 
+# menu for lock, poweroff, reboot, etc.
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker, mode "default"
@@ -173,19 +168,26 @@ mode "$mode_system" {
 
 bindsym $mod+Escape mode "$mode_system"
 
+# set gaps
+gaps outer 9
+gaps inner 9
+
 # shortcuts
 bindsym $mod+Ctrl+l exec $Locker
 bindsym $mod+b exec brave-browser
+bindsym $mod+m exec thunderbird
 bindsym $mod+Shift+b exec alacritty -e bashtop
 bindsym $mod+Shift+e exec alacritty -e lf
 bindsym $mod+Ctrl+e exec dolphin
 bindsym Print exec spectacle
+bindsym $mod+Shift+d exec flatpak run com.discordapp.Discord
+bindsym $mod+Shift+s exec flatpak run com.spotify.Client
 
 # music shortucts
-bindsym mod+plus		exec --no-startup-id pamixer -i 5
-bindsym mod+Shift+plus	exec --no-startup-id pamixer -i 15
-bindsym mod+minus		exec --no-startup-id pamixer -d 5
-bindsym mod+Shift+minus	exec --no-startup-id pamixer -d 15
+bindsym mod+Plus		exec --no-startup-id pactl set-sink-volume 1 +5%
+bindsym mod+Shift+plus	exec --no-startup-id pactl set-sink-volume 1 +10%
+bindsym mod+minus		exec --no-startup-id pactl set-sink-volume 1 -5%
+bindsym mod+Shift+minus	exec --no-startup-id pactl set-sink-volume 1 -10%
 
 # hide title bar
 new_window 1pixel
@@ -195,13 +197,20 @@ default_border pixel 3
 
 # colors
 # class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #3a74aa #ffffff #2e9ef4   #3f8cd3
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
 
 # move focused workspace between monitors
 bindsym $mod+Ctrl+greater move workspace to output right
 bindsym $mod+Ctrl+less move workspace to output left
 
 # set wallpaper
-exec --no-startup-id feh --bg-scale ~/Bilder/Wallpaper/Fedora/f34-02-night.png
+exec --no-startup-id feh --bg-scale /home/paul/Bilder/Wallpaper/minimal-landscape/mountains.png
 
 # start notification daemon
 exec --no-startup-id dunst
@@ -216,7 +225,7 @@ exec --no-startup-id compton
 exec --no-startup-id xfce4-power-manager
 
 # autolock after 10 minutes
-exec --no-startup-id xautolock -time 10 -locker $Locker
+exec --no-startup-id xautolock -time 5 -locker 'i3lock -i ~/Bilder/Wallpaper/minimal-landscape/mountains.png'
 
 # launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

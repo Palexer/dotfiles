@@ -53,11 +53,11 @@ enable-click = true
 enable-scroll = true
 index-sort = true
 
-label-focused = %index%
+label-focused = %name%
 label-focused-background = #66b2f9
 label-focused-padding = 2
 label-urgent-padding = 2
-label-unfocused = %index%
+label-unfocused = %name%
 label-unfocused-padding = 2
 label-visible-padding = 2
 
@@ -97,6 +97,7 @@ adapter = ADP0
 format-charging = <animation-charging> <label-charging>
 ; format-charging-underline = ${colors.foreground}
 format-charging-foreground = ${colors.nord8}
+
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 

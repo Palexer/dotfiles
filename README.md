@@ -6,5 +6,5 @@ My personal dotfiles for:
 - ZSH
 - Alacritty
 - tmux
-- i3
+- i3-gaps
 - polybar

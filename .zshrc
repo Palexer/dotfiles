@@ -90,5 +90,8 @@ alias gd="git diff"
 # export Go bin dir
 export PATH="$HOME/go/bin:$PATH"
 
+# CHROME_PATH is used by marp for pdf output
+export CHROME_PATH=/usr/bin/brave-browser
+
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
