@@ -149,7 +149,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # set lockscreen
-set $Locker i3lock -i ~/Dev/dotfiles/mountains.png && sleep 1
+set $Locker i3lock -i ~/dotfiles/mountains.png && sleep 1
 
 # menu for lock, poweroff, reboot, etc.
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -210,7 +210,7 @@ bindsym $mod+Ctrl+greater move workspace to output right
 bindsym $mod+Ctrl+less move workspace to output left
 
 # set wallpaper
-exec --no-startup-id feh --bg-scale ~/Dev/dotfiles/mountains.png
+exec --no-startup-id feh --bg-scale ~/dotfiles/mountains.png
 
 # start notification daemon
 exec --no-startup-id dunst
@@ -219,7 +219,7 @@ exec --no-startup-id dunst
 exec --no-startup-id redshift -O 4100K
 
 # start compositor
-exec --no-startup-id compton
+exec --no-startup-id picom
 
 # start xfce settings
 exec --no-startup-id xfsettingsd
@@ -228,7 +228,7 @@ exec --no-startup-id xfsettingsd
 exec --no-startup-id xfce4-power-manager
 
 # autolock after 10 minutes
-exec --no-startup-id xautolock -time 5 -locker 'i3lock -i ~/Dev/dotfiles/mountains.png'
+exec --no-startup-id xautolock -time 5 -locker 'i3lock -i ~/dotfiles/mountains.png'
 
 # launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
