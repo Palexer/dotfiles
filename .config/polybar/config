@@ -16,7 +16,7 @@ wm-restack = i3
 
 font-0 = "Roboto:size=13:weight=regular;3"
 font-1 = "Noto Sans:size=13;1"
-font-2 = "FontAwesome:style=Regular:size=13;4"
+font-2 = "Font Awesome 5 Free Solid:style=Regular:size=13;4"
 
 tray-position = right
 
@@ -106,11 +106,11 @@ animation-charging-4 = 
 animation-charging-framerate = 750
 
 format-discharging = <ramp-capacity> <label-discharging>
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 label-full = 
 label-full-foreground = ${colors.success}
 
