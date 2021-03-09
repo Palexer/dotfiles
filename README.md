@@ -3,8 +3,10 @@
 My personal dotfiles for:
 
 - Neovim
-- ZSH
+- zsh
 - Alacritty
 - tmux
 - i3-gaps
 - polybar
+- dunst
+- picom
