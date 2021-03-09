@@ -210,7 +210,7 @@ bindsym $mod+Ctrl+greater move workspace to output right
 bindsym $mod+Ctrl+less move workspace to output left
 
 # set wallpaper
-exec --no-startup-id feh --bg-scale ~/dotfiles/mountains.png
+exec --no-startup-id feh --bg-scale ~/Dev/dotfiles/mountains.png
 
 # start notification daemon
 exec --no-startup-id dunst
