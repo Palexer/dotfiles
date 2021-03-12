@@ -174,14 +174,15 @@ gaps inner 9
 
 # shortcuts
 bindsym $mod+Ctrl+l exec $Locker
-bindsym $mod+b exec brave-browser
+bindsym $mod+b exec brave
 bindsym $mod+m exec thunderbird
 bindsym $mod+Shift+b exec alacritty -e bashtop
 bindsym $mod+Shift+e exec alacritty -e lf
-bindsym $mod+Ctrl+e exec dolphin
+bindsym $mod+Ctrl+e exec pcmanfm
 bindsym Print exec spectacle
-bindsym $mod+Shift+d exec flatpak run com.discordapp.Discord
-bindsym $mod+Shift+s exec flatpak run com.spotify.Client
+bindsym $mod+Shift+d exec discord
+bindsym $mod+Shift+s exec spotify
+bindsym $mod+g exec gimp
 
 # music shortucts
 bindsym mod+Plus		exec --no-startup-id pactl set-sink-volume 1 +5%
@@ -210,7 +211,7 @@ bindsym $mod+Ctrl+greater move workspace to output right
 bindsym $mod+Ctrl+less move workspace to output left
 
 # set wallpaper
-exec --no-startup-id feh --bg-scale ~/Dev/dotfiles/mountains.png
+exec --no-startup-id feh --bg-scale ~/dotfiles/mountains.png
 
 # start notification daemon
 exec --no-startup-id dunst

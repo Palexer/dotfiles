@@ -59,8 +59,8 @@ alias vim="nvim"
 alias cl="clear"
 
 # set neovim as editor
-EDITOR=nvim
-VISUAL=nvim
+export EDITOR=nvim
+export VISUAL=nvim
 
 # quick access to zsh, neovim and i3 config
 alias zshrc='$EDITOR ~/.zshrc'
@@ -68,13 +68,6 @@ alias nvrc="$EDITOR ~/.config/nvim/init.vim"
 alias wmc="$EDITOR ~/.config/i3/config"
 
 alias grep='grep --color'
-
-# pamac and pacman
-alias ds="dnf search"
-alias di="sudo dnf install"
-alias dr="sudo dnf remove"
-alias dre="sudo dnf reinstall"
-alias update="sudo dnf upgrade && flatpak update"
 
 # git
 alias gi="git init"
