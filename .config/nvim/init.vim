@@ -188,11 +188,6 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" Automatically deletes all trailing whitespace and newlines at end of file on save.
-autocmd BufWritePre * %s/\s\+$//e
-autocmd BufWritePre * %s/\n\+\%$//e
-autocmd BufWritePre *.[ch] %s/\%$/\r/e
-
 " colors
 colorscheme onedark
 set termguicolors
