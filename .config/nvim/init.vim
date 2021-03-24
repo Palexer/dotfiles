@@ -17,6 +17,8 @@ set background=dark
 set noerrorbells
 set backspace=indent,eol,start
 set t_Co=256 " force 256 colors
+set cursorline!
+set lazyredraw
 
 " leader key
 let mapleader = ","
@@ -82,6 +84,15 @@ set complete+=kspell
 set completeopt=menuone,longest
 set shortmess+=c
 
+" register python-language-server
+if executable('pyls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
+
 " ale
 set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_enabled = 1
@@ -135,6 +146,7 @@ Plug 'preservim/nerdtree'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'conornewton/vim-latex-preview'
 Plug 'preservim/nerdcommenter'
+Plug 'chrisbra/unicode.vim'
 call plug#end()
 
 " Go configuration
@@ -187,6 +199,9 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" sent shortcut
+map <F4> :!sent %<CR><CR>
 
 " colors
 colorscheme onedark

@@ -137,8 +137,8 @@ mode "resize" {
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
         bindsym $mod+h resize shrink width 10 px or 10 ppt
-        bindsym $mod+j resize grow height 10 px or 10 ppt
-        bindsym $mod+k resize shrink height 10 px or 10 ppt
+        bindsym $mod+k resize grow height 10 px or 10 ppt
+        bindsym $mod+j resize shrink height 10 px or 10 ppt
         bindsym $mod+l resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
@@ -233,3 +233,5 @@ exec --no-startup-id xautolock -time 5 -locker 'i3lock -i ~/dotfiles/mountains.p
 
 # launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+exec --no-startup-id sudo sysctl -w abi.vsyscall32=0 

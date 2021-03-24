@@ -19,6 +19,12 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
+# convert MS Word documents to pdf quicker
+doc2pdf ()
+{
+	lowriter --convert-to pdf $1
+}
+
 # # ex - archive extractor
 # # usage: ex <file>
 ex ()
@@ -56,6 +62,7 @@ alias lla="exa -al"
 alias la="exa -a"
 
 alias vim="nvim"
+alias v="nvim"
 alias cl="clear"
 
 # set neovim as editor
@@ -68,6 +75,7 @@ alias nvrc="$EDITOR ~/.config/nvim/init.vim"
 alias wmc="$EDITOR ~/.config/i3/config"
 
 alias grep='grep --color'
+alias fzf='fzf --bind "CTRL-O:execute(xdg-open {})"'
 
 # git
 alias gi="git init"
