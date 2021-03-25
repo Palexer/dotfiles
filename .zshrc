@@ -78,15 +78,15 @@ alias grep='grep --color'
 alias fzf='fzf --bind "CTRL-O:execute(xdg-open {})"'
 
 # git
-alias gi="git init"
-alias ga="git add"
-alias gb="git branch"
-alias gc="git commit"
-alias gps="git push"
-alias gpl="git pull"
-alias gcl="git clone"
-alias gst="git status"
-alias gd="git diff"
+alias gini="git init"
+alias gadd="git add"
+alias gbra="git branch"
+alias gcmm="git commit"
+alias gpsh="git push"
+alias gpll="git pull"
+alias gcln="git clone"
+alias gstat="git status"
+alias gdiff="git diff"
 
 # export Go bin dir
 export PATH="$HOME/go/bin:$PATH"
