@@ -19,6 +19,7 @@ set backspace=indent,eol,start
 set t_Co=256 " force 256 colors
 set cursorline!
 set lazyredraw
+set mouse=a
 
 " leader key
 let mapleader = ","
@@ -206,3 +207,4 @@ map <F4> :!sent %<CR><CR>
 " colors
 colorscheme onedark
 set termguicolors
+

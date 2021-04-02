@@ -234,4 +234,3 @@ exec --no-startup-id xautolock -time 5 -locker 'i3lock -i ~/dotfiles/mountains.p
 # launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-exec --no-startup-id sudo sysctl -w abi.vsyscall32=0 

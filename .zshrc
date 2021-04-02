@@ -56,7 +56,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 
 # listing with exa
 alias ls="exa"
-alias l="exa"
+alias l="exa -alh"
 alias ll="exa -l"
 alias lla="exa -al"
 alias la="exa -a"
@@ -76,6 +76,7 @@ alias wmc="$EDITOR ~/.config/i3/config"
 
 alias grep='grep --color'
 alias fzf='fzf --bind "CTRL-O:execute(xdg-open {})"'
+alias sc="sc-im"
 
 # git
 alias gini="git init"
