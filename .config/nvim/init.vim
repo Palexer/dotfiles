@@ -194,6 +194,7 @@ set clipboard+=unnamedplus
 " vim-latex-live-preview settings
 autocmd Filetype tex setl updatetime=1
 let g:latex_pdf_viewer="zathura"
+let g:latex_engine="tectonic"
 
 " Shortcutting split navigation, saving a keypress:
 map <C-h> <C-w>h
