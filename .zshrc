@@ -89,6 +89,12 @@ alias gcln="git clone"
 alias gstat="git status"
 alias gdiff="git diff"
 
+# i3-swallow
+alias zathura="i3-swallow zathura"
+alias sxiv="i3-swallow sxiv"
+alias mpv="i3-swallow mpv"
+alias gimp="i3-swallow gimp"
+
 # export Go bin dir
 export PATH="$HOME/go/bin:$PATH"
 

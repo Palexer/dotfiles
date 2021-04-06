@@ -21,8 +21,8 @@ font-2 = "Font Awesome 5 Free Solid:style=Solid:size=13;4"
 tray-position = right
 
 modules-left = i3
-modules-center = date
-modules-right = pulseaudio battery
+modules-center =
+modules-right = date battery pulseaudio
 
 scroll-up = "#i3.prev"
 scroll-down = "#i3.next"
@@ -37,14 +37,11 @@ fixed-center = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
-line-color = #f00
-
 padding-left = 0
 padding-right = 0
 
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 2
+module-margin-right = 2
 
 [module/i3]
 type = internal/i3
@@ -63,9 +60,9 @@ label-visible-padding = 2
 
 [module/date]
 type = internal/date
-date = %d.%m.%Y
+date =  %a %d.%m.%Y
 time = %H:%M
-label = %date% - %time%
+label = %date%, %time%
 label-font = 3
 
 [module/pulseaudio]

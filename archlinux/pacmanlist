@@ -56,7 +56,6 @@ ca-certificates
 ca-certificates-mozilla
 ca-certificates-utils
 cabextract
-cadence
 cairo
 cairomm
 calf
@@ -91,7 +90,6 @@ diffutils
 discord
 djvulibre
 dkms
-dmenu
 dmraid
 dnssec-anchors
 dosfstools
@@ -114,6 +112,7 @@ fd
 feh
 ffmpeg
 fftw
+figlet
 file
 filesystem
 findutils
@@ -202,7 +201,7 @@ hwids
 hwloc
 hyphen
 i3-gaps
-i3lock
+i3status
 iana-etc
 icu
 ijs
@@ -624,6 +623,7 @@ libxcomposite
 libxcrypt
 libxcursor
 libxdamage
+libxdg-basedir
 libxdmcp
 libxext
 libxfce4ui
@@ -655,6 +655,7 @@ libyuv
 libzip
 libzmf
 licenses
+light-locker
 lightdm
 lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
@@ -903,6 +904,7 @@ python-flask-cors
 python-future
 python-gobject
 python-html5lib
+python-i3ipc
 python-idna
 python-importlib-metadata
 python-isort
@@ -961,6 +963,7 @@ python-webencodings
 python-werkzeug
 python-wheel
 python-wrapt
+python-xlib
 python-yaml
 python-zipp
 qca
@@ -995,6 +998,7 @@ realtime-privileges
 redland
 redshift
 rest
+rofi
 rsync
 rtkit
 rubberband
@@ -1107,6 +1111,7 @@ xcb-util-xrm
 xclip
 xdg-dbus-proxy
 xdg-utils
+xdo
 xf86-input-libinput
 xfce4-notifyd
 xfce4-power-manager
