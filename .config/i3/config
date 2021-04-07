@@ -50,18 +50,10 @@ bindsym $mod+n workspace next
 bindsym $mod+p workspace prev
 
 # resize windows
-mode "resize" {
-        bindsym $mod+h resize shrink width 10 px or 10 ppt
-        bindsym $mod+k resize grow height 10 px or 10 ppt
-        bindsym $mod+j resize shrink height 10 px or 10 ppt
-        bindsym $mod+l resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-bindsym $mod+r mode "resize"
+bindsym $mod+Control+h resize shrink width 10 px or 10 ppt
+bindsym $mod+Control+k resize grow height 10 px or 10 ppt
+bindsym $mod+Control+j resize shrink height 10 px or 10 ppt
+bindsym $mod+Control+l resize grow width 10 px or 10 ppt
 
 # move focused workspace between monitors
 bindsym $mod+Ctrl+greater move workspace to output right
@@ -71,7 +63,7 @@ bindsym $mod+Ctrl+less move workspace to output left
 #### Menu for poweroff, lock, etc. ####
 
 # set lockscreen
-set $Locker light-locker-command -I && sleep 1
+set $Locker $HOME/dotfiles/scripts/i3lock-multimonitor/i3lock-multimonitor.sh && sleep 1
 
 # menu for lock, poweroff, reboot, etc.
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -99,6 +91,9 @@ bindsym $mod+Shift+q kill
 
 # start rofi
 bindsym $mod+d exec --no-startup-id rofi -show combi
+
+# rofi as a file finder
+bindsym $mod+Shift+f exec --no-startup-id rofi  -show find -modi find:~/dotfiles/scripts/finder.sh
 
 # change focus
 bindsym $mod+h focus left
@@ -143,7 +138,6 @@ bindsym $mod+Shift+r restart
 # programs
 bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+Return exec alacritty -e tmux
-bindsym $mod+Ctrl+l exec $Locker
 bindsym $mod+b exec brave
 bindsym $mod+m exec thunderbird
 bindsym $mod+Shift+b exec alacritty -e bashtop
@@ -217,6 +211,6 @@ exec --no-startup-id xfce4-power-manager
 # launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# autolock after 10 minutes
-exec --no-startup-id xautolock -time 5 -locker 'light-locker-command -I'
+# autolock after 5 minutes
+exec --no-startup-id xautolock -time 5 -locker $HOME/dotfiles/scripts/i3lock-multimonitor/i3lock-multimonitor.sh
 
