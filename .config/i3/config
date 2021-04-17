@@ -59,6 +59,9 @@ bindsym $mod+Control+l resize grow width 10 px or 10 ppt
 bindsym $mod+Ctrl+greater move workspace to output right
 bindsym $mod+Ctrl+less move workspace to output left
 
+# keep window on all workspaces
+bindsym $mod+Ctrl+s sticky toggle
+
 
 #### Menu for poweroff, lock, etc. ####
 
@@ -93,7 +96,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id rofi -show combi
 
 # rofi as a file finder
-bindsym $mod+Shift+f exec --no-startup-id rofi  -show find -modi find:~/dotfiles/scripts/finder.sh
+bindsym $mod+Shift+f exec --no-startup-id rofi  -show find -modi find:~/dotfiles/scripts/rofi-finder/finder.sh
 
 # change focus
 bindsym $mod+h focus left
