@@ -85,35 +85,6 @@ set complete+=kspell
 set completeopt=menuone,longest
 set shortmess+=c
 
-" register python-language-server
-if executable('pyls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'whitelist': ['python'],
-        \ })
-endif
-
-" ale
-set omnifunc=ale#completion#OmniFunc
-let g:ale_completion_enabled = 1
-let g:ale_completion_autoimport = 1
-let g:ale_sign_column_always = 1
-let g:ale_fix_on_save = 1
-let g:ale_linters = {
- \ 'go': ['gopls'],
- \ 'python': ['pyls', 'pylint'],
- \}
-let g:ale_fixers = {
-    \ 'rust': ['rustfmt'],
-\}
-
-let g:ale_cpp_ccls_init_options = {
-\   'cache': {
-\       'directory': '/tmp/ccls/cache'
-\   }
-\ }
-
 " Navigate the complete menu items like CTRL+n / CTRL+p would.
 inoremap <expr> <Down> pumvisible() ? "<C-n>" :"<Down>"
 inoremap <expr> <Up> pumvisible() ? "<C-p>" : "<Up>"
@@ -127,8 +98,8 @@ inoremap <silent><expr><S-TAB>
 
 
 " go to definition and find references
-nmap <silent> <F2> :ALEGoToDefinition<CR>
-nmap <silent> <F3> :ALEFindReferences<CR>
+map <silent> <F2> :call CocAction('jumpDefinition', 'drop') <Cr>
+" todo: find all references
 
 " Plugins
 " Install Plug
@@ -142,12 +113,14 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 Plug 'jiangmiao/auto-pairs' " auto close brackets, etc.
 Plug 'godlygeek/tabular'
-Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'conornewton/vim-latex-preview'
 Plug 'preservim/nerdcommenter'
 Plug 'chrisbra/unicode.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " Go configuration
@@ -178,10 +151,6 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let NERDTreeShowHidden=1 " Show hidden files
 
-" Error and warning signs.
-let g:ale_sign_error = '⤫'
-let g:ale_sign_warning = '⚠'
-
 " hide parts of the default status bar
 set noshowmode
 set noruler
@@ -204,6 +173,9 @@ map <C-l> <C-w>l
 
 " sent shortcut
 map <F4> :!sent %<CR><CR>
+
+" fzf
+map f :FZF <CR>
 
 " colors
 colorscheme onedark
