@@ -189,6 +189,12 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" tabs
+nnoremap <A-h> :tabprevious<CR>
+nnoremap <A-l> :tabnext<CR>
+nnoremap <silent> <A-H> :tabm -1<CR>
+nnoremap <silent> <A-L> :tabm +1<CR>
+
 " sent shortcut
 map <F4> :!sent %<CR><CR>
 
