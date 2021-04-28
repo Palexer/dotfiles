@@ -1,4 +1,26 @@
 " neovim config file by Palexer (init.vim)
+
+" Plugins
+" Install Plug
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.config/nvim/plugged')
+Plug 'jiangmiao/auto-pairs' " auto close brackets, etc.
+Plug 'godlygeek/tabular'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/nerdtree'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'conornewton/vim-latex-preview'
+Plug 'preservim/nerdcommenter'
+Plug 'chrisbra/unicode.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+call plug#end()
+
 " general
 filetype plugin indent on
 set number
@@ -97,31 +119,33 @@ inoremap <silent><expr><S-TAB>
     \ pumvisible() ? "\<C-p>" : "\<TAB>"
 
 
-" go to definition and find references
-map <silent> <F2> :call CocAction('jumpDefinition', 'drop') <Cr>
-" todo: find all references
+" Coc
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-" Plugins
-" Install Plug
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
-" Plugins
-call plug#begin('~/.config/nvim/plugged')
-Plug 'jiangmiao/auto-pairs' " auto close brackets, etc.
-Plug 'godlygeek/tabular'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'preservim/nerdtree'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'conornewton/vim-latex-preview'
-Plug 'preservim/nerdcommenter'
-Plug 'chrisbra/unicode.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-call plug#end()
+" go to next/previous error
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+let g:coc_global_extensions = [
+  \ 'coc-json', 
+  \ 'coc-pyright',
+  \ ]
+
+" go to definition, find all references, rename
+nmap <F2> <Plug>(coc-rename)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " Go configuration
 " Go syntax highlighting
@@ -131,18 +155,12 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_operators = 1
 
-" disable vim-go autocompletion and use ale instead
+" disable vim-go autocompletion and use coc instead
 let g:go_code_completion_enabled = 0
 
 " Auto formatting and importing
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
-
-" Status line types/signatures
-let g:go_auto_type_info = 1
-
-" automatically open autocompletion menu when a dot appears
-au filetype go inoremap <buffer> . .<C-x><C-o>
 
 " NERDTree configuration
 " Toggle side window with `CTRL+z`.
@@ -175,7 +193,7 @@ map <C-l> <C-w>l
 map <F4> :!sent %<CR><CR>
 
 " fzf
-map f :FZF <CR>
+map <silent> f :FZF <CR>
 
 " colors
 colorscheme onedark
