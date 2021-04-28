@@ -71,6 +71,7 @@ export VISUAL=nvim
 
 # quick access to zsh, neovim and i3 config
 alias zshrc='$EDITOR ~/.zshrc'
+alias zshh='bat ~/.cache/zsh/history'
 alias nvrc="$EDITOR ~/.config/nvim/init.vim"
 alias wmc="$EDITOR ~/.config/i3/config"
 
