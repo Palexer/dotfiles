@@ -13,16 +13,17 @@ Plug 'jiangmiao/auto-pairs' " auto close brackets, etc.
 Plug 'godlygeek/tabular'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'conornewton/vim-latex-preview'
 Plug 'preservim/nerdcommenter'
 Plug 'chrisbra/unicode.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " general
 filetype plugin indent on
+set runtimepath+=$GOROOT/misc/vim
 set number
 syntax on
 set encoding=utf-8
@@ -42,6 +43,7 @@ set t_Co=256 " force 256 colors
 set cursorline!
 set lazyredraw
 set mouse=a
+
 
 " leader key
 let mapleader = ","
@@ -138,6 +140,8 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 let g:coc_global_extensions = [
   \ 'coc-json', 
   \ 'coc-pyright',
+  \ 'coc-go',
+  \ 'coc-clangd',
   \ ]
 
 " go to definition, find all references, rename
@@ -147,7 +151,9 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Go configuration
+" coc-go autoimports on save
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+
 " Go syntax highlighting
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
@@ -157,10 +163,6 @@ let g:go_highlight_operators = 1
 
 " disable vim-go autocompletion and use coc instead
 let g:go_code_completion_enabled = 0
-
-" Auto formatting and importing
-let g:go_fmt_autosave = 1
-let g:go_fmt_command = "goimports"
 
 " NERDTree configuration
 " Toggle side window with `CTRL+z`.
