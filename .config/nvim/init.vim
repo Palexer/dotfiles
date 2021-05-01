@@ -161,9 +161,6 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_operators = 1
 
-" disable vim-go autocompletion and use coc instead
-let g:go_code_completion_enabled = 0
-
 " NERDTree configuration
 " Toggle side window with `CTRL+z`.
 map <C-z> :NERDTreeToggle<CR>
