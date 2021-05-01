@@ -4,18 +4,6 @@ MKDIR = mkdir -p
 LN = ln -vsf
 LNDIR = ln -vs
 
-help:
-	echo Help:
-	echo
-	echo tlp
-	echo lightdm
-	echo base-config
-	echo networkmanager
-	echo bluetooth
-	echo fonts
-	echo yay
-	echo dotfiles
-
 tlp:
 	sudo pacman -S tlp powertop
 	systemctl enable tlp.service
@@ -53,20 +41,23 @@ yay:
 	cd ..
 	rm -rf yay
 
-dotfiles:
+linkdotfiles:
 	# create directories
-	$MKDIR .config/i3
-	$MKDIR .config/polybar
-	$MKDIR .config/alacritty
-	$MKDIR .config/dunst
-	$MKDIR .config/nvim/colors
-	$MKDIR .config/nvim/autoload
+	$MKDIR $HOME/.config/i3
+	$MKDIR $HOME/.config/polybar
+	$MKDIR $HOME/.config/alacritty
+	$MKDIR $HOME/.config/dunst
+	$MKDIR $HOME/.config/zathura
+	$MKDIR $HOME/.config/rofi
+	$MKDIR $HOME/.config/nvim/colors
+	$MKDIR $HOME/.config/nvim/autoload
 
 	# link files
 	$LN $BASE/.config/i3/config $HOME/.config/i3/config
 	$LN $BASE/.config/polybar/config $HOME/.config/polybar/config
 	$LN $BASE/.config/polybar/launch.sh $HOME/.config/polybar/launch.sh
 	$LN $BASE/.config/nvim/init.vim $HOME/.config/nvim/init.vim
+	$LN $BASE/.config/nvim/coc-settings.json $HOME/.config/nvim/coc-settings.json
 	$LN $BASE/.config/nvim/autoload/onedark.vim $HOME/.config/nvim/autoload/onedark.vim
 	$LN $BASE/.config/nvim/colors/onedark.vim $HOME/.config/nvim/colors/onedark.vim
 	$LN $BASE/.config/picom.conf $HOME/.config/picom.conf
@@ -74,6 +65,9 @@ dotfiles:
 	$LN $BASE/.config/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 	$LN $BASE/.tmux.conf $HOME/.tmux.conf
 	$LN $BASE/.zshrc $HOME/.zshrc
+	$LN $BASE/.config/zathura/zathurarc $HOME/.config/zathura/zathurarc
+	$LN $BASE/.config/rofi/config.rasi $HOME/.config/rofi/config.rasi
+	$LN $BASE/.profile $HOME/.profile
 
 	# make polybar script executable
 	chmod +x $HOME/.config/polybar/launch.sh
