@@ -1,16 +1,21 @@
 a2jmidid
+aalib
 accounts-qml-module
 acl
 adobe-source-code-pro-fonts
 adwaita-icon-theme
 alacritty
+alsa-card-profiles
 alsa-lib
 alsa-plugins
 alsa-topology-conf
 alsa-ucm-conf
 alsa-utils
+android-tools
 anki
+ant
 aom
+arandr
 arc-gtk-theme
 arc-icon-theme
 archlinux-keyring
@@ -56,6 +61,7 @@ ca-certificates
 ca-certificates-mozilla
 ca-certificates-utils
 cabextract
+cadence
 cairo
 cairomm
 calf
@@ -71,6 +77,7 @@ colord
 compiler-rt
 confuse
 coreutils
+cpupower
 cronie
 cryptsetup
 cups
@@ -133,8 +140,10 @@ gawk
 gc
 gcc
 gcc-libs
+gcr
 gd
 gdbm
+gdk-pixbuf-xlib
 gdk-pixbuf2
 gegl
 geoclue
@@ -163,6 +172,7 @@ go
 gobject-introspection-runtime
 gparted
 gpgme
+gping
 gpm
 gptfdisk
 graphene
@@ -177,6 +187,7 @@ gsm
 gst-libav
 gst-plugins-base
 gst-plugins-base-libs
+gst-plugins-good
 gstreamer
 gtk-update-icon-cache
 gtk2
@@ -201,6 +212,7 @@ hwids
 hwloc
 hyphen
 i3-gaps
+i3lock
 i3status
 iana-etc
 icu
@@ -217,9 +229,13 @@ jack2
 jack2-dbus
 jansson
 jasper
+java-environment-common
 java-runtime-common
 jbig2dec
+jdk-openjdk
 jedi-language-server
+jre-openjdk
+jre-openjdk-headless
 jre8-openjdk
 jre8-openjdk-headless
 js78
@@ -381,6 +397,7 @@ lib32-libxrandr
 lib32-libxrender
 lib32-libxshmfence
 lib32-libxslt
+lib32-libxss
 lib32-libxtst
 lib32-libxv
 lib32-libxxf86vm
@@ -390,6 +407,8 @@ lib32-mesa
 lib32-mpg123
 lib32-ncurses
 lib32-nettle
+lib32-nspr
+lib32-nss
 lib32-ocl-icd
 lib32-openal
 lib32-openssl
@@ -420,6 +439,7 @@ libaccounts-glib
 libaccounts-qt
 libaio
 libappimage
+libappindicator-gtk3
 libarchive
 libass
 libassuan
@@ -457,6 +477,7 @@ libdbusmenu-gtk3
 libdbusmenu-qt5
 libde265
 libdrm
+libdv
 libdvdnav
 libdvdread
 libe-book
@@ -471,6 +492,7 @@ libevent
 libexif
 libexttextcat
 libfakekey
+libfdk-aac
 libffi
 libfm
 libfm-extra
@@ -482,6 +504,7 @@ libgcrypt
 libgee
 libgexiv2
 libgit2
+libglade
 libglvnd
 libgnomekbd
 libgpg-error
@@ -500,6 +523,7 @@ libidn2
 libiec61883
 libimagequant
 libimobiledevice
+libindicator-gtk3
 libinih
 libinput
 libinstpatch
@@ -509,6 +533,7 @@ libjpeg6-turbo
 libkipi
 libksba
 liblangtag
+libldac
 libldap
 liblo
 liblouis
@@ -531,6 +556,7 @@ libmtp
 libmwaw
 libmypaint
 libndp
+libnet
 libnetfilter_conntrack
 libnewt
 libnfnetlink
@@ -538,12 +564,14 @@ libnftnl
 libnghttp2
 libnl
 libnm
+libnma
 libnotify
 libnsl
 libnumbertext
 libodfgen
 libogg
 libomxil-bellagio
+libopenaptx
 liborcus
 libp11-kit
 libpagemaker
@@ -570,6 +598,7 @@ libsamplerate
 libsasl
 libseccomp
 libsecret
+libshout
 libsidplayfp
 libsigc++
 libsm
@@ -655,7 +684,6 @@ libyuv
 libzip
 libzmf
 licenses
-light-locker
 lightdm
 lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
@@ -663,11 +691,15 @@ lilv
 linux-api-headers
 linux-firmware
 linux-lts
+linux-lts-headers
 lirc
 llvm-libs
 lm_sensors
 lpsolve
+lsb-release
 lshw
+lsof
+lua
 lua52
 luajit
 lutris
@@ -680,6 +712,7 @@ m4
 mailcap
 make
 man-db
+maven
 md4c
 mdadm
 media-player-info
@@ -707,10 +740,13 @@ net-snmp
 netpbm
 nettle
 networkmanager
+nm-connection-editor
+node-gyp
 nodejs
 nodejs-material-design-icons
 noto-fonts
 noto-fonts-emoji
+npm
 npth
 nspr
 nss
@@ -863,6 +899,7 @@ perl-xml-sax-base
 perl-xml-writer
 picom
 pinentry
+pipewire-docs
 pixman
 pkgconf
 polkit
@@ -877,6 +914,7 @@ protobuf
 psmisc
 psutils
 pulseaudio
+pulseaudio-alsa
 pulseaudio-bluetooth
 pulseaudio-jack
 pulseaudio-qt
@@ -1008,6 +1046,7 @@ scrot
 sdl
 sdl2
 sed
+semver
 serd
 shaderc
 shadow
@@ -1034,6 +1073,7 @@ sratom
 srt
 starship
 startup-notification
+steam
 sudo
 suil
 suitesparse
@@ -1048,6 +1088,7 @@ systemd-sysvcompat
 taglib
 tar
 tbb
+tcl
 tdb
 texinfo
 thin-provisioning-tools
@@ -1060,6 +1101,7 @@ ttf-font-awesome
 ttf-hack
 ttf-liberation
 ttf-roboto
+twolame
 tzdata
 uchardet
 udisks2
@@ -1071,8 +1113,10 @@ usbutils
 util-linux
 util-linux-libs
 v4l-utils
+v4l2loopback-dkms
 vamp-plugin-sdk
 vid.stab
+vimiv
 virtualbox
 virtualbox-guest-iso
 virtualbox-host-dkms
@@ -1089,6 +1133,7 @@ webkit2gtk
 webrtc-audio-processing
 wget
 which
+whois
 wine-staging
 wkhtmltopdf
 woff2
@@ -1120,6 +1165,7 @@ xfconf
 xfsprogs
 xkeyboard-config
 xmlsec
+xorg-appres
 xorg-fonts-encodings
 xorg-server
 xorg-server-common
