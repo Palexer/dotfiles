@@ -1,4 +1,13 @@
 {
-  "suggest.enablePreview": true,
-  "suggest.floatEnable": true
+	"suggest.enablePreview": true,
+	"suggest.floatEnable": true,
+	"go.goplsOptions": {
+		"completeUnimported": true
+	},
+	"coc.preferences.formatOnSaveFiletypes": ["css", "go", "c", "html", "js"],
+	"coc.preferences.formatOnType":true,
+	"prettier.useTabs": true,
+	"prettier.tabWidth": 4,
+	"prettier.singleQuote":false,
+	"prettier.formatterPriority": -1
 }

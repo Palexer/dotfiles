@@ -44,6 +44,8 @@ set cursorline!
 set lazyredraw
 set mouse=a
 
+" disable automatic commenting on newline
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " leader key
 let mapleader = ","
@@ -120,7 +122,6 @@ inoremap <silent><expr><TAB>
 inoremap <silent><expr><S-TAB>
     \ pumvisible() ? "\<C-p>" : "\<TAB>"
 
-
 " Coc
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -133,6 +134,9 @@ function! s:show_documentation()
   endif
 endfunction
 
+" use <c-space>for trigger completion inoremap
+inoremap <silent><expr> <c-space> coc#refresh()
+
 " go to next/previous error
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
@@ -142,6 +146,10 @@ let g:coc_global_extensions = [
   \ 'coc-pyright',
   \ 'coc-go',
   \ 'coc-clangd',
+  \ 'coc-html',
+  \ 'coc-css',
+  \ 'coc-tsserver',
+  \ 'coc-prettier',
   \ ]
 
 " go to definition, find all references, rename
@@ -153,6 +161,15 @@ nmap <silent> gr <Plug>(coc-references)
 
 " coc-go autoimports on save
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+
+" gofmt on save
+
+" :Prettier to format current buffer
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" leader + f for range format
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 " Go syntax highlighting
 let g:go_highlight_fields = 1
