@@ -4,10 +4,11 @@
 	"go.goplsOptions": {
 		"completeUnimported": true
 	},
-	"coc.preferences.formatOnSaveFiletypes": ["css", "go", "c", "html", "js"],
+	"coc.preferences.formatOnSaveFiletypes": ["css", "go", "c", "html", "javascript", "python"],
 	"coc.preferences.formatOnType":true,
 	"prettier.useTabs": true,
 	"prettier.tabWidth": 4,
 	"prettier.singleQuote":false,
-	"prettier.formatterPriority": -1
+	"prettier.formatterPriority": -1,
+	"prettier.semi": false
 }

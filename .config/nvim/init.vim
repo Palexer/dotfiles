@@ -16,8 +16,6 @@ Plug 'preservim/nerdtree'
 Plug 'conornewton/vim-latex-preview'
 Plug 'preservim/nerdcommenter'
 Plug 'chrisbra/unicode.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 call plug#end()
 
@@ -54,7 +52,8 @@ let mapleader = ","
 set splitbelow
 set splitright
 
-" Enable folding set foldmethod=indent
+" Enable folding 
+set foldmethod=indent
 set foldlevel=99
 
 " Enable folding with the spacebar
@@ -206,18 +205,16 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " tabs
-nnoremap <A-h> :tabprevious<CR>
-nnoremap <A-l> :tabnext<CR>
+nnoremap <silent> <A-h> :tabprevious<CR>
+nnoremap <silent> <A-l> :tabnext<CR>
 nnoremap <silent> <A-H> :tabm -1<CR>
 nnoremap <silent> <A-L> :tabm +1<CR>
 
 " sent shortcut
 map <F4> :!sent %<CR><CR>
 
-" fzf
-map <silent> f :FZF <CR>
-
 " colors
 colorscheme onedark
 set termguicolors
 
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
