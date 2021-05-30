@@ -62,6 +62,7 @@ bindsym $mod+Ctrl+less move workspace to output left
 # keep window on all workspaces
 bindsym $mod+Ctrl+s sticky toggle
 
+focus_follows_mouse no
 
 #### Menu for poweroff, lock, etc. ####
 
@@ -215,5 +216,5 @@ exec --no-startup-id xfce4-power-manager
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # autolock after 5 minutes
-exec --no-startup-id xautolock -time 5 -locker $HOME/dotfiles/scripts/i3lock-multimonitor/i3lock-multimonitor.sh
+exec --no-startup-id xautolock -time 15 -locker $HOME/dotfiles/scripts/i3lock-multimonitor/i3lock-multimonitor.sh
 
