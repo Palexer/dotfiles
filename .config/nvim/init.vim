@@ -40,6 +40,7 @@ set t_Co=256 " force 256 colors
 set cursorline!
 set lazyredraw
 set mouse=a
+set updatetime=300
 
 " disable automatic commenting on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -121,14 +122,16 @@ inoremap <silent><expr><S-TAB>
     \ pumvisible() ? "\<C-p>" : "\<TAB>"
 
 " Coc
-" Use K to show documentation in preview window
+" Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
   else
-    call CocAction('doHover')
+    execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
 
