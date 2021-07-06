@@ -142,15 +142,22 @@ bindsym $mod+Shift+r restart
 # programs
 bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+Return exec alacritty -e tmux
+bindsym $mod+Shift+m exec alacritty -e btm
 bindsym $mod+b exec brave
 bindsym $mod+m exec thunderbird
 bindsym $mod+Shift+b exec alacritty -e bashtop
 bindsym $mod+Shift+e exec alacritty -e lf
 bindsym $mod+Ctrl+e exec pcmanfm
-bindsym Print exec spectacle
 bindsym $mod+Shift+d exec discord
 bindsym $mod+Shift+s exec spotify
 bindsym $mod+g exec gimp
+
+# screenshot
+bindsym Print exec $HOME/dotfiles/scripts/screenshot/screenshot.sh win
+bindsym Ctrl+$mod+1 exec $HOME/dotfiles/scripts/screenshot/screenshot.sh scr
+bindsym Ctrl+$mod+2 exec $HOME/dotfiles/scripts/screenshot/screenshot.sh win
+bindsym Ctrl+$mod+3 exec $HOME/dotfiles/scripts/screenshot/screenshot.sh area
+
 
 # audio
 bindsym mod+plus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
@@ -195,7 +202,7 @@ client.background       #ffffff
 #### Autostart ####
 
 # set wallpaper
-exec --no-startup-id feh --bg-scale ~/dotfiles/mountains.png
+exec --no-startup-id feh --bg-scale ~/dotfiles/backgrounds/Graphite\ 5K\ P3.jpg
 
 # start notification daemon
 exec --no-startup-id dunst
@@ -215,6 +222,6 @@ exec --no-startup-id xfce4-power-manager
 # launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# autolock after 5 minutes
+# autolock after 15 minutes
 exec --no-startup-id xautolock -time 15 -locker $HOME/dotfiles/scripts/i3lock-multimonitor/i3lock-multimonitor.sh
 
