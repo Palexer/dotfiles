@@ -21,7 +21,6 @@ call plug#end()
 
 " general
 filetype plugin indent on
-set runtimepath+=$GOROOT/misc/vim
 set number
 syntax on
 set encoding=utf-8
@@ -144,6 +143,7 @@ let g:coc_global_extensions = [
   \ 'coc-json', 
   \ 'coc-pyright',
   \ 'coc-go',
+  \ 'coc-rls',
   \ 'coc-clangd',
   \ 'coc-html',
   \ 'coc-css',
