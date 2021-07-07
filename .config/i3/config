@@ -153,11 +153,13 @@ bindsym $mod+Shift+s exec spotify
 bindsym $mod+g exec gimp
 
 # screenshot
-bindsym Print exec $HOME/dotfiles/scripts/screenshot/screenshot.sh win
-bindsym Ctrl+$mod+1 exec $HOME/dotfiles/scripts/screenshot/screenshot.sh scr
-bindsym Ctrl+$mod+2 exec $HOME/dotfiles/scripts/screenshot/screenshot.sh win
-bindsym Ctrl+$mod+3 exec $HOME/dotfiles/scripts/screenshot/screenshot.sh area
-
+# save whole screen
+bindsym Print exec maim $HOME/Bilder/screenshots/unsortiert/$(date +'%Y-%m-%d:%H-%M-%S').png
+bindsym Ctrl+$mod+1 exec maim $HOME/Bilder/screenshots/unsortiert/$(date +'%Y-%m-%d:%H-%M-%S').png
+# save selected area
+bindsym Ctrl+$mod+2 exec maim --select $HOME/Bilder/screenshots/unsortiert/$(date +'%Y-%m-%d:%H-%M-%S').png
+# copy selected area to clipboard
+bindsym Ctrl+$mod+3 exec maim --select | xclip -selection clipboard -t image/png
 
 # audio
 bindsym mod+plus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
