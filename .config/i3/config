@@ -204,7 +204,7 @@ client.background       #ffffff
 #### Autostart ####
 
 # set wallpaper
-exec --no-startup-id feh --bg-scale ~/dotfiles/backgrounds/Graphite\ 5K\ P3.jpg
+exec --no-startup-id feh --bg-scale ~/dotfiles/backgrounds/graphite5kP3.jpg
 
 # start notification daemon
 exec --no-startup-id dunst
