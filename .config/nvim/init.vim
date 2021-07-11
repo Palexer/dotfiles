@@ -17,6 +17,7 @@ Plug 'conornewton/vim-latex-preview'
 Plug 'preservim/nerdcommenter'
 Plug 'chrisbra/unicode.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 " general
@@ -152,6 +153,7 @@ let g:coc_global_extensions = [
   \ 'coc-css',
   \ 'coc-tsserver',
   \ 'coc-prettier',
+  \ 'coc-vetur',
   \ ]
 
 " go to definition, find all references, rename
@@ -161,17 +163,18 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" coc-go autoimports on save
-autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
-
-" gofmt on save
-
 " :Prettier to format current buffer
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" coc-prettier
+autocmd BufWritePre *.js,*.vue,*.css,*.html,*.json,*.py CocCommand prettier.formatFile
 
 " leader + f for range format
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+
+" coc-go autoimports on save
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 " Go syntax highlighting
 let g:go_highlight_fields = 1
@@ -186,6 +189,9 @@ map <C-z> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let NERDTreeShowHidden=1 " Show hidden files
+
+" emmet-vim
+let g:user_emmet_leader_key='<C-g>'
 
 " hide parts of the default status bar
 set noshowmode

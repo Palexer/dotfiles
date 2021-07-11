@@ -4,12 +4,11 @@
 	"go.goplsOptions": {
 		"completeUnimported": true
 	},
-	"coc.preferences.formatOnType":true,
 	"prettier.useTabs": true,
 	"prettier.tabWidth": 4,
-	"prettier.singleQuote":false,
-	"prettier.formatterPriority": -1,
+	"prettier.singleQuote": false,
 	"prettier.semi": false,
 	"prettier.printWidth": 100,
-	"coc.preferences.formatOnSaveFiletypes": ["css", "go", "html", "c", "javascript", "python", "json", "rust"]
+	"coc.preferences.formatOnType": true,
+	"coc.preferences.formatOnSaveFiletypes": ["go", "rust", "c", "cpp"]
 }
