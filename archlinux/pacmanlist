@@ -72,14 +72,20 @@ cairomm
 calf
 cantarell-fonts
 carla
+cblas
 ccls
 cdparanoia
 celt
 cfitsio
+cheese
 chromaprint
 clang
 clucene
+clutter
+clutter-gst
+clutter-gtk
 cmatrix
+cogl
 colord
 compiler-rt
 confuse
@@ -185,6 +191,7 @@ glu
 gmp
 gnome-desktop
 gnome-themes-extra
+gnome-video-effects
 gnupg
 gnutls
 go
@@ -547,6 +554,7 @@ libglvnd
 libgme
 libgnomekbd
 libgpg-error
+libgphoto2
 libgsf
 libgtop
 libgudev
@@ -774,6 +782,7 @@ menu-cache
 mesa
 mesa-demos
 metis
+micro
 minizip
 mjpegtools
 mkinitcpio

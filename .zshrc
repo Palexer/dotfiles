@@ -78,6 +78,7 @@ alias wmc="$EDITOR ~/.config/i3/config"
 alias grep='grep --color'
 alias fzf='fzf --bind "CTRL-O:execute(xdg-open {})"'
 alias sc="sc-im"
+alias tm="tmux"
 
 # git
 alias gini="git init"
@@ -98,3 +99,4 @@ export CHROME_PATH=/usr/bin/brave-browser
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
