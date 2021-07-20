@@ -145,7 +145,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 let g:coc_global_extensions = [
   \ 'coc-json', 
-  \ 'coc-pyright',
+  \ 'coc-jedi',
   \ 'coc-go',
   \ 'coc-rls',
   \ 'coc-clangd',
@@ -218,6 +218,9 @@ nnoremap <silent> <A-h> :tabprevious<CR>
 nnoremap <silent> <A-l> :tabnext<CR>
 nnoremap <silent> <A-H> :tabm -1<CR>
 nnoremap <silent> <A-L> :tabm +1<CR>
+
+" open new tab with NERDTree
+nnoremap <silent> <A-t> :tabe .<CR>
 
 " sent shortcut
 map <F4> :!sent %<CR><CR>
