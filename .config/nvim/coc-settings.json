@@ -10,5 +10,5 @@
 	"prettier.semi": false,
 	"prettier.printWidth": 100,
 	"coc.preferences.formatOnType": true,
-	"coc.preferences.formatOnSaveFiletypes": ["go", "rust", "c", "cpp"]
+	"coc.preferences.formatOnSaveFiletypes": ["go", "rust", "c", "cpp", "python"]
 }

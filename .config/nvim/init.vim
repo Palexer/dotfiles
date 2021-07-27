@@ -167,7 +167,7 @@ nmap <silent> gr <Plug>(coc-references)
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " coc-prettier
-autocmd BufWritePre *.js,*.vue,*.css,*.html,*.json,*.py CocCommand prettier.formatFile
+autocmd BufWritePre *.js,*.vue,*.css,*.html,*.json CocCommand prettier.formatFile
 
 " leader + f for range format
 vmap <leader>f  <Plug>(coc-format-selected)
