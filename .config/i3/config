@@ -167,8 +167,8 @@ bindsym Ctrl+$mod+2 exec maim --select $HOME/Bilder/screenshots/unsortiert/$(dat
 bindsym Ctrl+$mod+3 exec maim --select | xclip -selection clipboard -t image/png
 
 # audio
-bindsym $mod+plus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
-bindsym $mod+minus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym $mod+plus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym $mod+minus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%

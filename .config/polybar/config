@@ -25,7 +25,7 @@ tray-position = right
 
 modules-left = i3
 modules-center =
-modules-right = date time battery pulseaudio
+modules-right = date time battery wlan pulseaudio powermenu
 
 scroll-up = "#i3.prev"
 scroll-down = "#i3.next"
@@ -123,4 +123,12 @@ label-full-foreground = ${colors.green}
 format-charging-font = 6
 format-discharging-font = 6
 label-full-font = 6
+
+[module/wlan]
+type = internal/network
+interface = wlan0
+interval = 3.0
+format-connected = %{A1:nm-connection-editor:} <label-connected>%{A}
+label-connected = %essid%
+format-disconnected =
 
