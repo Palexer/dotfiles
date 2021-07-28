@@ -6,7 +6,9 @@ brave-bin
 discord_arch_electron
 downgrade
 droidcam
+etcher-bin
 eva
+figma-linux
 i3-swallow
 lf
 marp-cli
@@ -18,6 +20,7 @@ paru-bin
 pfetch
 polybar
 protonvpn-linux-gui
+pywal-git
 reaper-bin
 sc-im
 simplenote-electron-bin
@@ -26,6 +29,7 @@ tectonic-bin
 timeshift
 tonelib-jam-bin
 tuxguitar
+v4l2loopback-utils
 vue-cli
 wkhtmltopdf-static
 xvkbd

@@ -37,6 +37,7 @@ audacious-plugins
 audacity
 audit
 autoconf
+autoconf-archive
 automake
 avahi
 avldrums.lv2
@@ -112,6 +113,8 @@ djvulibre
 dkms
 dmraid
 dnssec-anchors
+docbook-xml
+docbook-xsl
 dosfstools
 double-conversion
 dragonfly-reverb
@@ -184,17 +187,20 @@ github-cli
 glew
 glib-networking
 glib2
+glib2-docs
 glibc
 glibmm
 glslang
 glu
 gmp
+gnome-common
 gnome-desktop
 gnome-themes-extra
 gnome-video-effects
 gnupg
 gnutls
 go
+gobject-introspection
 gobject-introspection-runtime
 gopls
 gparted
@@ -219,6 +225,7 @@ gst-plugins-base
 gst-plugins-base-libs
 gst-plugins-good
 gstreamer
+gtk-doc
 gtk-update-icon-cache
 gtk2
 gtk3
@@ -228,12 +235,14 @@ gts
 guile
 guitarix
 gumbo-parser
+gunicorn
 gupnp
 gupnp-igd
 gzip
 harfbuzz
 harfbuzz-icu
 hdparm
+help2man
 hicolor-icon-theme
 hidapi
 hplip
@@ -252,10 +261,12 @@ ijs
 imagemagick
 imath
 imlib2
+intltool
 iproute2
 iptables
 iputils
 iso-codes
+itstool
 iw
 iwd
 jack2
@@ -509,6 +520,7 @@ libconfig
 libcroco
 libcue
 libcups
+libcurl-compat
 libcurl-gnutls
 libdaemon
 libdatrie
@@ -771,6 +783,7 @@ m4
 mailcap
 maim
 make
+mallard-ducktype
 man-db
 mariadb-libs
 maven
@@ -822,6 +835,7 @@ obs-studio
 ocl-icd
 openal
 opencore-amr
+opencv
 openexr
 openjpeg2
 openmpi
@@ -914,6 +928,7 @@ perl-list-moreutils
 perl-list-moreutils-xs
 perl-list-someutils
 perl-list-utilsby
+perl-locale-gettext
 perl-log-log4perl
 perl-lwp-mediatypes
 perl-lwp-protocol-https
@@ -964,6 +979,7 @@ perl-xml-libxml
 perl-xml-libxml-simple
 perl-xml-libxslt
 perl-xml-namespacesupport
+perl-xml-parser
 perl-xml-sax
 perl-xml-sax-base
 perl-xml-writer
@@ -974,6 +990,7 @@ pipewire-docs
 pixman
 pkcs11-helper
 pkgconf
+playerctl
 polkit
 polkit-qt5
 poppler
@@ -995,10 +1012,12 @@ pulseaudio-jack
 pulseaudio-qt
 purpose
 python
+python-anytree
 python-appdirs
 python-argcomplete
 python-astroid
 python-attrs
+python-beaker
 python-beautifulsoup4
 python-cachecontrol
 python-cairo
@@ -1017,6 +1036,7 @@ python-evdev
 python-flask
 python-flask-cors
 python-future
+python-gevent
 python-gobject
 python-greenlet
 python-html5lib
@@ -1033,6 +1053,7 @@ python-jsonschema
 python-language-server
 python-lazy-object-proxy
 python-lxml
+python-mako
 python-markdown
 python-markupsafe
 python-mccabe
@@ -1056,6 +1077,7 @@ python-pycups
 python-pycurl
 python-pydantic
 python-pygls
+python-pygments
 python-pyliblo
 python-pylint
 python-pynvim
@@ -1077,6 +1099,7 @@ python-six
 python-soupsieve
 python-termcolor
 python-toml
+python-tomli
 python-typeguard
 python-typing_extensions
 python-ujson
@@ -1089,6 +1112,8 @@ python-wrapt
 python-xlib
 python-yaml
 python-zipp
+python-zope-event
+python-zope-interface
 qca-qt5
 qjackctl
 qpdf
@@ -1189,6 +1214,7 @@ tdb
 texinfo
 the_silver_searcher
 thin-provisioning-tools
+thunar
 thunderbird
 tk
 tldr
@@ -1198,6 +1224,7 @@ tor
 tree
 tree-sitter
 tslib
+ttf-fantasque-sans-mono
 ttf-font-awesome
 ttf-hack
 ttf-liberation
@@ -1215,7 +1242,6 @@ usbutils
 util-linux
 util-linux-libs
 v4l-utils
-v4l2loopback-dkms
 vamp-plugin-sdk
 vegeta
 vid.stab
@@ -1288,6 +1314,8 @@ xvidcore
 xxhash
 xz
 yajl
+yelp-tools
+yelp-xsl
 zathura
 zathura-djvu
 zathura-pdf-mupdf
