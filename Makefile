@@ -14,8 +14,7 @@ lightdm:
 	systemctl enable lightdm.service
 
 base-config:
-	sudo pacman -S xorg-xinit xorg-server i3gaps redshift feh xfce4-settings xfce4-power-manager pulseaudio xautolock i3lock picom dunst neovim alacritty tmux thunderbird zsh zsh-autosuggestions man tree lf pcmanfm
-	yay -S polybar brave zsh-syntax-highlighting
+	paru -S xorg-xinit xorg-server i3gaps redshift feh xfce4-settings xfce4-power-manager pulseaudio xautolock i3lock picom dunst neovim alacritty tmux thunderbird zsh zsh-autosuggestions man tree lf pcmanfm polybar brave zsh-syntax-highlighting
 	echo "exec i3" > $HOME/.xinitrc
 	chsh
 
