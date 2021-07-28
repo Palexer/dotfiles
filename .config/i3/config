@@ -7,7 +7,7 @@ set $mod Mod4
 floating_modifier $mod
 
 
-#### Windows/Workspaces ####
+#### Windows/Workspaces behaviour ####
 
 # define workspace names
 set $ws1 "1"
@@ -63,6 +63,10 @@ bindsym $mod+Ctrl+less move workspace to output left
 bindsym $mod+Ctrl+s sticky toggle
 
 focus_follows_mouse no
+
+# default app locations
+for_window [class="Pavucontrol"] floating enable
+
 
 #### Menu for poweroff, lock, etc. ####
 
@@ -132,7 +136,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+Ctrl+a focus parent
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -151,6 +155,7 @@ bindsym $mod+Ctrl+e exec pcmanfm
 bindsym $mod+Shift+d exec discord
 bindsym $mod+Shift+s exec spotify
 bindsym $mod+g exec gimp
+bindsym $mod+a exec pavucontrol
 
 # screenshot
 # save whole screen
@@ -162,13 +167,19 @@ bindsym Ctrl+$mod+2 exec maim --select $HOME/Bilder/screenshots/unsortiert/$(dat
 bindsym Ctrl+$mod+3 exec maim --select | xclip -selection clipboard -t image/png
 
 # audio
-bindsym mod+plus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
-bindsym mod+minus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym $mod+plus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym $mod+minus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+ 
+# Media control
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 
 #### Appearance ####
@@ -191,20 +202,20 @@ gaps inner 9
 default_border pixel 3
 
 # colors
-# class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #3a74aa #ffffff #2e9ef4   #3f8cd3
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-client.background       #ffffff
+# class                 border   backgr.  text    indicator child_border
+client.focused          #5E81AC  #4c566a  #eceff4 #5E81AC   #5E81AC
+client.focused_inactive #3b4252  #3b4252  #eceff4 #4c566a   #282828
+client.unfocused        #2e3440  #2e3440  #eceff4 #2e3440   #2e3440
+client.urgent           #bf616a  #bf616a  #2e3440 #d08770   #bf616a
+client.placeholder      #000000  #0c0c0c  #eceff4 #000000   #0c0c0c
 
+client.background		#2e3440
 
 #### Autostart ####
 
 # set wallpaper
-exec --no-startup-id feh --bg-scale ~/dotfiles/backgrounds/graphite5kP3.jpg
+exec --no-startup-id feh --bg-scale ~/dotfiles/backgrounds/nord-mountain-1920.png
 
 # start notification daemon
 exec --no-startup-id dunst

@@ -24,17 +24,17 @@ configuration {
 
 * {
 	al:  #00000000;
-	bg:  #000000;
-	se:  #212121;
+	bg:  #2E3440;
+	se:  #4C566A;
 	fg:  #FFFFFFff;
-	ac:  #4D9FE1;
+	ac:  #81A1C1;
 }
 
 window {
     transparency:                   "real";
     background-color:               @bg;
     text-color:                     @fg;
-	border:							0px;
+	border:							2px;
 	border-color:					@ac;
     border-radius:                  12px;
 	width:							30%;

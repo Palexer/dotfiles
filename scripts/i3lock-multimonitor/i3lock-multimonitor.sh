@@ -25,7 +25,7 @@ if [ "$arg_image" ]; then
 elif [ -f "/usr/share/i3lock-multimonitor/img/background.png" ]; then
     BKG_IMG="/usr/share/i3lock-multimonitor/img/background.png"  # Default image
 else
-    BKG_IMG="$HOME/dotfiles/backgrounds/graphite5kP3.jpg" # Fallback to current folder
+    BKG_IMG="$HOME/dotfiles/backgrounds/nord-mountain-1920.png" # Fallback to current folder
 fi
 
 if ! [ -e "$BKG_IMG" ]; then

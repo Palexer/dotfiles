@@ -18,6 +18,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'chrisbra/unicode.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 " general
@@ -226,7 +227,7 @@ nnoremap <silent> <A-t> :tabe .<CR>
 map <F4> :!sent %<CR><CR>
 
 " colors
-colorscheme onedark
+colorscheme nord
 set termguicolors
 
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
