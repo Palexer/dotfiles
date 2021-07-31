@@ -1,0 +1,27 @@
+extends: default-with-fallback-font
+page:
+    margin: [2cm, 2cm, 2cm, 2cm]
+    size: A4
+base:
+    font-family: NotoSans
+    font-size: 12
+footer:
+    recto:
+        left:
+            content: "{author}"
+        right:
+            content: "{page-number}"
+
+    verso:
+        left:
+            content: "{author}"
+        right:
+            content: "{page-number}"
+font:
+    catalog:
+        merge: true
+        NotoSans:
+            normal: NotoSans-Regular.ttf
+            italic: NotoSans-Italic.ttf
+            bold: NotoSans-Bold.ttf
+            bold_italic: NotoSans-BoldItalic.ttf

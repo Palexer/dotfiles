@@ -24,7 +24,7 @@ font-2 = "Font Awesome 5 Free Solid:style=Solid:size=13;4"
 tray-position = right
 
 modules-left = i3
-modules-center =
+modules-center = 
 modules-right = date time battery wlan pulseaudio powermenu
 
 scroll-up = "#i3.prev"
@@ -132,3 +132,13 @@ format-connected = %{A1:nm-connection-editor:} <label-connected>%{A}
 label-connected = %essid%
 format-disconnected =
 
+[module/xwindow]
+type = internal/xwindow
+format = <label>
+format-foreground = ${colors.blue}
+format-padding = 4
+label = %title%
+label-maxlen = 50
+label-empty = 
+
+[module/mpd]

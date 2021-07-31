@@ -79,6 +79,7 @@ alias grep='grep --color'
 alias fzf='fzf --bind "CTRL-O:execute(xdg-open {})"'
 alias sc="sc-im"
 alias tm="tmux"
+alias apdf="asciidoctor-pdf"
 
 # git
 alias gini="git init"

@@ -103,6 +103,10 @@ function! ToggleSpell()
   echo "spell checking language:" g:myLangList[b:myLang]
 endfunction
 
+" shortcuts for spell checking:
+" ]s next error / [s previous error
+" z= show fixes / zg add to dictionary
+
 " toggle language with F7
 nmap <silent> <F7> :call ToggleSpell()<CR>
 
@@ -168,7 +172,7 @@ nmap <silent> gr <Plug>(coc-references)
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " coc-prettier
-autocmd BufWritePre *.js,*.vue,*.css,*.html,*.json CocCommand prettier.formatFile
+autocmd BufWritePre *.js,*.vue,*.css,*.html,*.json,*.yml,*.yaml CocCommand prettier.formatFile
 
 " leader + f for range format
 vmap <leader>f  <Plug>(coc-format-selected)
@@ -225,6 +229,10 @@ nnoremap <silent> <A-t> :tabe .<CR>
 
 " sent shortcut
 map <F4> :!sent %<CR><CR>
+
+" asciidoc convert to pdf
+autocmd FileType asciidoc map <buffer> <F4> :!asciidoctor-pdf -a pdf-fontsdir=/usr/share/fonts/noto,GEM_FONTS_DIR -a pdf-theme=theme.yml % <CR><CR>
+autocmd FileType asciidoc map <buffer> <F5> :!asciidoctor-revealjs % <CR><CR>
 
 " colors
 colorscheme nord

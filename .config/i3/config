@@ -66,6 +66,7 @@ focus_follows_mouse no
 
 # default app locations
 for_window [class="Pavucontrol"] floating enable
+for_window [class="Arandr"] floating enable
 
 
 #### Menu for poweroff, lock, etc. ####
