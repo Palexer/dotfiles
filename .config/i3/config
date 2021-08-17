@@ -47,7 +47,9 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # go to next/previous workspace
 bindsym $mod+n workspace next
+bindsym $mod+Tab workspace next
 bindsym $mod+p workspace prev
+bindsym $mod+Shift+Tab workspace prev
 
 # resize windows
 bindsym $mod+Control+h resize shrink width 10 px or 10 ppt
@@ -181,6 +183,8 @@ bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym $mod+Shift+n exec --no-startup-id playerctl next
+bindsym $mod+Shift+p exec --no-startup-id playerctl previous
 
 
 #### Appearance ####

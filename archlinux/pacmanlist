@@ -2,6 +2,7 @@ a2jmidid
 a52dec
 aalib
 accounts-qml-module
+accountsservice
 acl
 adobe-source-code-pro-fonts
 adwaita-icon-theme
@@ -15,7 +16,6 @@ alsa-utils
 android-tools
 android-udev
 anki
-ant
 aom
 arandr
 arc-gtk-theme
@@ -25,6 +25,8 @@ ardour
 argon2
 aribb24
 ark
+asciidoc
+asciidoctor
 at-spi2-atk
 at-spi2-core
 atk
@@ -37,7 +39,6 @@ audacious-plugins
 audacity
 audit
 autoconf
-autoconf-archive
 automake
 avahi
 avldrums.lv2
@@ -80,6 +81,7 @@ celt
 cfitsio
 cheese
 chromaprint
+cifs-utils
 clang
 clucene
 clutter
@@ -97,6 +99,7 @@ cronie
 cryptsetup
 cups
 cups-filters
+cups-pk-helper
 curl
 dash
 dav1d
@@ -124,7 +127,6 @@ ebook-tools
 efibootmgr
 efivar
 electron
-electron12
 element-desktop
 element-web
 elfutils
@@ -176,9 +178,9 @@ gdk-pixbuf2
 gegl
 geoclue
 geocode-glib
+geogebra
 gettext
 ghostscript
-giblib
 giflib
 gimp
 girara
@@ -187,20 +189,17 @@ github-cli
 glew
 glib-networking
 glib2
-glib2-docs
 glibc
 glibmm
 glslang
 glu
 gmp
-gnome-common
 gnome-desktop
 gnome-themes-extra
 gnome-video-effects
 gnupg
 gnutls
 go
-gobject-introspection
 gobject-introspection-runtime
 gopls
 gparted
@@ -209,6 +208,7 @@ gping
 gpm
 gptfdisk
 graphene
+graphicsmagick
 graphite
 graphviz
 grep
@@ -216,7 +216,9 @@ groff
 grub
 gsettings-desktop-schemas
 gsfonts
+gsl
 gsm
+gspell
 gssdp
 gst-libav
 gst-plugins-bad
@@ -225,7 +227,7 @@ gst-plugins-base
 gst-plugins-base-libs
 gst-plugins-good
 gstreamer
-gtk-doc
+gtest
 gtk-update-icon-cache
 gtk2
 gtk3
@@ -242,7 +244,6 @@ gzip
 harfbuzz
 harfbuzz-icu
 hdparm
-help2man
 hicolor-icon-theme
 hidapi
 hplip
@@ -261,12 +262,11 @@ ijs
 imagemagick
 imath
 imlib2
-intltool
+inkscape
 iproute2
 iptables
 iputils
 iso-codes
-itstool
 iw
 iwd
 jack2
@@ -294,6 +294,7 @@ karchive
 kauth
 kbd
 kbookmarks
+kcharselect
 kcmutils
 kcodecs
 kcolorpicker
@@ -343,9 +344,11 @@ lame
 languagetool
 lapack
 lcms2
+ldb
 ldns
 lensfun
 less
+lib2geom
 lib32-acl
 lib32-alsa-lib
 lib32-alsa-plugins
@@ -359,7 +362,6 @@ lib32-cairo
 lib32-colord
 lib32-curl
 lib32-dbus
-lib32-dconf
 lib32-e2fsprogs
 lib32-expat
 lib32-faudio
@@ -398,8 +400,6 @@ lib32-libffi
 lib32-libgcrypt
 lib32-libglvnd
 lib32-libgpg-error
-lib32-libgudev
-lib32-libgusb
 lib32-libice
 lib32-libidn2
 lib32-libjpeg-turbo
@@ -425,7 +425,6 @@ lib32-libtiff
 lib32-libtirpc
 lib32-libunistring
 lib32-libunwind
-lib32-libusb
 lib32-libva
 lib32-libvorbis
 lib32-libx11
@@ -469,7 +468,6 @@ lib32-pam
 lib32-pango
 lib32-pcre
 lib32-pixman
-lib32-polkit
 lib32-readline
 lib32-rest
 lib32-sdl2
@@ -520,7 +518,6 @@ libconfig
 libcroco
 libcue
 libcups
-libcurl-compat
 libcurl-gnutls
 libdaemon
 libdatrie
@@ -556,6 +553,7 @@ libfm
 libfm-extra
 libfm-gtk2
 libfontenc
+libfreeaptx
 libfreehand
 libftdi
 libgcrypt
@@ -601,9 +599,11 @@ liblqr
 liblrdf
 libltc
 libluv
+liblxqt
 libmad
 libmanette
 libmatroska
+libmd
 libmfx
 libmicrodns
 libmicrohttpd
@@ -625,6 +625,7 @@ libnet
 libnetfilter_conntrack
 libnewt
 libnfnetlink
+libnfs
 libnftnl
 libnghttp2
 libnice
@@ -638,7 +639,6 @@ libodfgen
 libofa
 libogg
 libomxil-bellagio
-libopenaptx
 liborcus
 libp11-kit
 libpagemaker
@@ -653,6 +653,7 @@ libpng
 libproxy
 libpsl
 libpulse
+libqtxdg
 libqxp
 libraqm
 libraw
@@ -668,6 +669,7 @@ libsecret
 libshout
 libsidplayfp
 libsigc++
+libsigsegv
 libsm
 libsndfile
 libsodium
@@ -765,6 +767,7 @@ linux-lts-headers
 lirc
 llvm-libs
 lm_sensors
+lmdb
 lpsolve
 lsb-release
 lshw
@@ -776,17 +779,17 @@ luajit
 lutris
 lvm2
 lxappearance
+lxinput
 lxmenu-data
+lxqt-sudo
 lz4
 lzo
 m4
 mailcap
 maim
 make
-mallard-ducktype
 man-db
 mariadb-libs
-maven
 mbedtls
 md4c
 mdadm
@@ -818,6 +821,7 @@ neovim
 net-snmp
 netpbm
 nettle
+network-manager-applet
 networkmanager
 nm-connection-editor
 nmap
@@ -928,7 +932,6 @@ perl-list-moreutils
 perl-list-moreutils-xs
 perl-list-someutils
 perl-list-utilsby
-perl-locale-gettext
 perl-log-log4perl
 perl-lwp-mediatypes
 perl-lwp-protocol-https
@@ -979,7 +982,6 @@ perl-xml-libxml
 perl-xml-libxml-simple
 perl-xml-libxslt
 perl-xml-namespacesupport
-perl-xml-parser
 perl-xml-sax
 perl-xml-sax-base
 perl-xml-writer
@@ -1001,6 +1003,7 @@ popt
 portaudio
 portsmf
 postgresql-libs
+potrace
 procps-ng
 protobuf
 psmisc
@@ -1008,16 +1011,15 @@ psutils
 pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
+pulseaudio-equalizer
 pulseaudio-jack
 pulseaudio-qt
 purpose
 python
-python-anytree
 python-appdirs
 python-argcomplete
 python-astroid
 python-attrs
-python-beaker
 python-beautifulsoup4
 python-cachecontrol
 python-cairo
@@ -1030,6 +1032,7 @@ python-cryptography
 python-decorator
 python-distlib
 python-distro
+python-dnspython
 python-docopt
 python-docstring-to-markdown
 python-evdev
@@ -1053,7 +1056,6 @@ python-jsonschema
 python-language-server
 python-lazy-object-proxy
 python-lxml
-python-mako
 python-markdown
 python-markupsafe
 python-mccabe
@@ -1070,14 +1072,12 @@ python-pluggy
 python-ply
 python-progress
 python-protobuf
-python-psutil
 python-pyaudio
 python-pycparser
 python-pycups
 python-pycurl
 python-pydantic
 python-pygls
-python-pygments
 python-pyliblo
 python-pylint
 python-pynvim
@@ -1138,6 +1138,7 @@ qt5-x11extras
 qt5-xmlpatterns
 qt5ct
 qt6-base
+ragel
 rapidjson
 raptor
 rasqal
@@ -1155,6 +1156,17 @@ rtkit
 rtmpdump
 rttr
 rubberband
+ruby
+ruby-addressable
+ruby-concurrent
+ruby-irb
+ruby-polyglot
+ruby-public_suffix
+ruby-reline
+ruby-rexml
+ruby-safe_yaml
+ruby-treetop
+rubygems
 run-parts
 rustup
 sbc
@@ -1174,6 +1186,7 @@ signon-ui
 signond
 slang
 slop
+smbclient
 snappy
 solid
 sonnet
@@ -1206,12 +1219,16 @@ system-config-printer
 systemd
 systemd-libs
 systemd-sysvcompat
+t1lib
 taglib
+talloc
 tar
 tbb
 tcl
 tdb
+tevent
 texinfo
+texlive-bin
 the_silver_searcher
 thin-provisioning-tools
 thunar
@@ -1310,12 +1327,11 @@ xorg-xrandr
 xorg-xrdb
 xorg-xset
 xorgproto
+xournalpp
 xvidcore
 xxhash
 xz
 yajl
-yelp-tools
-yelp-xsl
 zathura
 zathura-djvu
 zathura-pdf-mupdf
@@ -1336,3 +1352,4 @@ zsh-syntax-highlighting
 zstd
 zvbi
 zxing-cpp
+zziplib

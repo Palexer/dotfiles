@@ -23,21 +23,21 @@ call plug#end()
 
 " general
 filetype plugin indent on
+set autoindent
+set smartindent
+set backspace=indent,eol,start
+set tabstop=4
+set shiftwidth=4
 set number
 syntax on
 set encoding=utf-8
-set smartindent
-set tabstop=4
-set shiftwidth=4
 set nowrap
-set nu
 set noswapfile
 set undodir=~/.config/nvim/undodir
 set undofile
 set incsearch
 set background=dark
 set noerrorbells
-set backspace=indent,eol,start
 set t_Co=256 " force 256 colors
 set cursorline!
 set lazyredraw
@@ -73,6 +73,7 @@ set statusline+=%#DiffDelete#%{(mode()=='r')?'\ \ RPLACE\ ':''}
 set statusline+=%#Cursor#%{(mode()=='v')?'\ \ VISUAL\ ':''}
 set statusline+=\ %n\           		" buffer number
 set statusline+=%#Visual#       		" colour
+set statusline+=%#CursorIM#     		" colour
 set statusline+=%{&paste?'\ PASTE\ ':''}
 set statusline+=%{&spell?'\ SPELL\ ':''}
 set statusline+=%#CursorIM#     		" colour
@@ -227,15 +228,28 @@ nnoremap <silent> <A-L> :tabm +1<CR>
 " open new tab with NERDTree
 nnoremap <silent> <A-t> :tabe .<CR>
 
-" sent shortcut
+" close tab
+nnoremap <silent> <A-q> :tabclose <CR>
+
+" compile/view document
+
+" view sent shortcut
 map <F4> :!sent %<CR><CR>
 
 " asciidoc convert to pdf
-autocmd FileType asciidoc map <buffer> <F4> :!asciidoctor-pdf -a pdf-fontsdir=/usr/share/fonts/noto,GEM_FONTS_DIR -a pdf-theme=theme.yml % <CR><CR>
+autocmd FileType asciidoc map <buffer> <F4> :!asciidoctor-pdf -a pdf-fontsdir=/usr/share/fonts/noto,GEM_FONTS_DIR -a pdf-theme=$HOME/dotfiles/other/asciidoc-pdf-theme.yml % <CR><CR>
 autocmd FileType asciidoc map <buffer> <F5> :!asciidoctor-revealjs % <CR><CR>
+autocmd FileType asciidoc map <buffer> <F6> :!asciidoctor-pdf -a pdf-fontsdir=/usr/share/fonts/noto,GEM_FONTS_DIR -a pdf-theme=theme.yml % <CR><CR>
+
+" markdown converter
+autocmd FileType markdown map <buffer> <F4> :!mdconv -o %:r.pdf % <CR> <CR>
+" autocmd FileType markdown map <buffer> <F5> :!mdconv -o %:r.pdf % && !zathura %:r.pdf && !rm %
 
 " colors
 colorscheme nord
 set termguicolors
 
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" no indentation for markdown files
+autocmd FileType markdown setlocal indentexpr=
