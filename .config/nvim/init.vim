@@ -13,7 +13,6 @@ Plug 'jiangmiao/auto-pairs' " auto close brackets, etc.
 Plug 'godlygeek/tabular'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
-Plug 'conornewton/vim-latex-preview'
 Plug 'preservim/nerdcommenter'
 Plug 'chrisbra/unicode.vim'
 Plug 'sheerun/vim-polyglot'
@@ -162,6 +161,11 @@ let g:coc_global_extensions = [
   \ 'coc-vetur',
   \ ]
 
+let g:LanguageClient_serverCommands = {
+	\ 'lua': ['lua-lsp'],
+	\ }
+let g:LanguageClient_autoStart = 1
+
 " go to definition, find all references, rename
 nmap <F2> <Plug>(coc-rename)
 nmap <silent> gd <Plug>(coc-definition)
@@ -208,11 +212,6 @@ set cmdheight=1
 " copy/paste with system clipboard by default
 set clipboard+=unnamedplus
 
-" vim-latex-live-preview settings
-autocmd Filetype tex setl updatetime=1
-let g:latex_pdf_viewer="zathura"
-let g:latex_engine="tectonic"
-
 " Shortcutting split navigation, saving a keypress:
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -253,3 +252,4 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " no indentation for markdown files
 autocmd FileType markdown setlocal indentexpr=
+autocmd FileType tex setlocal indentexpr=
