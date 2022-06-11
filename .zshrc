@@ -8,6 +8,13 @@ PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magent
 eval "$(starship init zsh)"
 
 # History in cache directory:
+# create directory and file if not existend
+if [ -e $HOME/.cache/zsh/history ]
+then
+	mkdir -p $HOME/.cache/zsh/
+	touch $HOME/.cache/zsh/history
+fi
+
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
@@ -52,7 +59,8 @@ ex ()
 
 # aliases
 alias o="i3-swallow xdg-open"
-export QT_QPA_PLATFORMTHEME=qt5ct
+#export QT_STYLE_OVERRIDE=adwaita-dark
+#export QT_QPA_PLATFORMTHEME=qt5ct
 
 # listing with exa
 alias ls="exa"
@@ -77,9 +85,7 @@ alias wmc="$EDITOR ~/.config/i3/config"
 
 alias grep='grep --color'
 alias fzf='fzf --bind "CTRL-O:execute(xdg-open {})"'
-alias sc="sc-im"
 alias tm="tmux"
-alias apdf="asciidoctor-pdf"
 
 # git
 alias gini="git init"
@@ -98,6 +104,12 @@ export PATH="$HOME/go/bin:$PATH"
 # CHROME_PATH is used by marp for pdf output
 export CHROME_PATH=/usr/bin/brave-browser
 
+export PATH=$PATH:$HOME/Android/Sdk/tools/bin # export Android SDK
+export PATH="$PATH:$HOME/dev/flutter/bin" # export Flutter SDK
+
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
