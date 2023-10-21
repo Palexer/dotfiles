@@ -7,6 +7,7 @@
  *
  */
 
+
 configuration {
 	font:							"Noto Sans 11";
     show-icons:                     true;

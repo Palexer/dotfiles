@@ -1,0 +1,24 @@
+{
+	"workbench.colorTheme": "Nord",
+	"editor.mouseWheelZoom": true,
+	"editor.fontSize": 18,
+	"terminal.integrated.fontSize": 16,
+	"terminal.integrated.profiles.linux": {
+		"zsh": {
+			"path": "/usr/bin/flatpak-spawn",
+			"args": ["--host", "--env=TERM=xterm-256color", "zsh"],
+			"overrideName": true
+		}
+	},
+
+	"terminal.integrated.defaultProfile.linux": "zsh",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"prettier.tabWidth": 4,
+	"prettier.useTabs": true,
+	"prettier.bracketSameLine": false,
+	"prettier.bracketSpacing": true,
+	"prettier.singleQuote": false,
+	"prettier.semi": true,
+	"workbench.startupEditor": "none"
+}
