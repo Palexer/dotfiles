@@ -20,5 +20,7 @@
 	"prettier.bracketSpacing": true,
 	"prettier.singleQuote": false,
 	"prettier.semi": true,
-	"workbench.startupEditor": "none"
+	"workbench.startupEditor": "none",
+	"security.workspace.trust.untrustedFiles": "open",
+	"latex-workshop.latex.autoBuild.run": "never"
 }

@@ -82,6 +82,7 @@ alias zshrc='$EDITOR ~/.zshrc'
 alias zshh='bat ~/.cache/zsh/history'
 alias nvrc="$EDITOR ~/.config/nvim/init.vim"
 alias wmc="$EDITOR ~/.config/i3/config"
+alias code="flatpak run com.vscodium.codium"
 
 alias grep='grep --color'
 alias fzf='fzf --bind "CTRL-O:execute(xdg-open {})"'
