@@ -246,7 +246,7 @@ autocmd FileType markdown map <buffer> <F4> :!mdconv -o %:r.pdf % <CR> <CR>
 
 " colors
 colorscheme nord
-set termguicolors
+" set termguicolors
 
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
