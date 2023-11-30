@@ -159,6 +159,7 @@ let g:coc_global_extensions = [
   \ 'coc-tsserver',
   \ 'coc-prettier',
   \ 'coc-vetur',
+  \ 'coc-texlab',
   \ ]
 
 let g:LanguageClient_serverCommands = {
@@ -253,3 +254,6 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " no indentation for markdown files
 autocmd FileType markdown setlocal indentexpr=
 autocmd FileType tex setlocal indentexpr=
+
+" LaTeX
+let g:tex_flavor = 'latex'
